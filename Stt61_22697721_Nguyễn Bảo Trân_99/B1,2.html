@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript Object Constructors</h1>
+    <p id="demo0"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script>
+        // Constructor Function for Person objects
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+        // Create a Person object
+        const myFather = new Person("John", "Doe", 50, "blue");
+
+        // Display attributes
+        document.getElementById("demo0").innerHTML = "My father's first name is " + myFather.firstName + ",";
+        document.getElementById("demo1").innerHTML = "My father's last name is " + myFather.lastName + ",";
+        document.getElementById("demo2").innerHTML = "My father's age is " + myFather.age + ",";
+        document.getElementById("demo3").innerHTML = "My father's eye color is " + myFather.eyeColor + ".";
+    </script>
+</body>
+
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Kiểm tra tháng</title>
+    <script language="javascript" type="text/javascript">
+        var t = prompt("Nhập vào một tháng của năm không nhuận: ");
+        t = parseInt(t); // Chuyển đổi giá trị đầu vào thành số nguyên
+        switch (t) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                alert("Tháng " + t + " có 31 ngày");
+                break;
+            case 2:
+                alert("Tháng " + t + " có 28 ngày");
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                alert("Tháng " + t + " có 30 ngày");
+                break;
+            default:
+                alert("Không phải là tháng của năm");
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra năm nhuận</title>
+</head>
+
+<body>
+    <p>Nhập năm cần kiểm tra:</p>
+    <input type="text" name="txtName" id="txtName">
+    <input type="button" value="Kiểm tra" onclick="kiemTraNamNhuan()" />
+    <script language="javascript">
+        function kiemTraNamNhuan() {
+            var nam = parseInt(document.getElementById("txtName").value);
+
+            if (nam % 100 == 0) { // nếu năm chia hết cho 100
+                if (nam % 400 == 0) {
+                    alert('Năm ' + nam + ' là năm nhuận');
+                } else {
+                    alert('Năm ' + nam + ' không phải là năm nhuận');
+                }
+            } else if (nam % 4 == 0) { // nếu năm chia hết cho 4
+                alert('Năm ' + nam + ' là năm nhuận');
+            } else {
+                alert('Năm ' + nam + ' không phải là năm nhuận');
+            }
+        }
+    </script>
+</body>
+
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Kiểm tra tam giác</title>
+    <script language="javascript" type="text/javascript">
+        function kiemTraTamGiac() {
+            var a = parseFloat(document.getElementById("canhA").value);
+            var b = parseFloat(document.getElementById("canhB").value);
+            var c = parseFloat(document.getElementById("canhC").value);
+
+            if (a + b > c && a + c > b && b + c > a) {
+                alert("Đây là các cạnh của một tam giác");
+                if (a === b && b === c) {
+                    document.getElementById("result").innerHTML = "Tam giác ABC đều";
+                } else if (a === b || a === c || b === c) {
+                    document.getElementById("result").innerHTML = "Tam giác ABC cân";
+                } else {
+                    document.getElementById("result").innerHTML = "Tam giác ABC là tam giác thường";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Không phải là tam giác";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Nhập các cạnh của tam giác:</h2>
+    <form>
+        Cạnh a: <input type="text" id="canhA" /><br /><br /> Cạnh b: <input type="text" id="canhB" /><br /><br /> Cạnh c: <input type="text" id="canhC" /><br /><br />
+        <input type="button" value="Kiểm tra" onclick="kiemTraTamGiac()" />
+    </form>
+
+    <p id="result"></p>
+</body>
+
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cộng hai số</title>
+    <script language="javascript">
+        function cong2so() {
+            var so1 = parseInt(document.myform.txtso1.value);
+            var so2 = parseInt(document.myform.txtso2.value);
+            var kq = so1 + so2; // Sửa lỗi ở đây: sử dụng biến đúng và cộng hai số
+            document.write('Kết quả: ' + kq);
+        }
+    </script>
+</head>
+
+<body>
+    <form name="myform">
+        Số 1: <input type="text" name="txtso1" /><br /><br /> Số 2: <input type="text" name="txtso2" /><br /><br />
+        <input type="button" value="Cộng" onclick="cong2so()" />
+    </form>
+</body>
+
+</html>
